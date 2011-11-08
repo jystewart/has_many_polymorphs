@@ -2,8 +2,6 @@
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
  
-#require 'bundler/version'
- 
 Gem::Specification.new do |s|
   s.name        = "has_many_polymorphs"
   s.version     = "3.0.0.beta1"

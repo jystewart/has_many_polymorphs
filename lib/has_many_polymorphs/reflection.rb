@@ -16,8 +16,13 @@ module ActiveRecord #:nodoc:
           when :has_many_polymorphs
             reflection = PolymorphicReflection.new(macro, name, options, active_record)
         end
-        write_inheritable_hash :reflections, name => reflection
-        reflection
+
+	class_attribute :reflections
+	self.reflections = reflection
+
+	# DEPRICATED for Rails 3.2
+        #write_inheritable_hash :reflections, name => reflection
+        reflections
       end
 
     end
